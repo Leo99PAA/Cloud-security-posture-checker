@@ -1,2 +1,2 @@
 # Cloud-security-posture-checker
-Desenvolver um mini-CSPM que roda uma verificação interna no sistema AWS e gera um relatório de falhas que precisão ser ajustadas na nuvem  
+Este projeto é uma ferramenta de linha de comando (CLI) escrita em Python que realiza uma checagem automatizada de postura de segurança em uma conta AWS. Ele coleta dados via AWS APIs com permissões de leitura (IAM ReadOnly) e aplica um conjunto de regras para identificar riscos comuns de configuração, gerando um relatório com achados, evidências e recomendações de correção.
