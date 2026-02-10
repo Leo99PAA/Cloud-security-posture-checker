@@ -1,0 +1,7 @@
+#Setup utilizado:
+Python 3.13.0;
+VsCode;
+Git;
+AWS CLI;
+Uma conta AWS com permissão de leitura; 
+Um Venv para instalar bibliotecas e rodar o código de maneira isolada.
