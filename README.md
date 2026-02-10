@@ -1,2 +1,2 @@
 # Cloud-security-posture-checker
-Criar um mini-CSPM que coleta inventário + roda checks + gera relatório
+Desenvolver um mini-CSPM que roda checks no sistema AWS e gera um relatório de falhas que precisão ser ajustadas 
