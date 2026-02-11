@@ -1,1 +1,35 @@
+import boto3
+from botocore.exceptions import ProfileNotFound, NoCredentialsError, ClientError
 
+def scan_teste(profile: str = "<NOME DO PROFILE>", region: str = "<REGIÃO DA CONTA>") -> None:
+    try:
+        session = boto3.Session(profile_name=profile, region_name=region)
+    except ProfileNotFound:
+        raise SystemExit(
+            f"profile '{profile}' não encontrado. rode: aws configure --profile {profile}"
+        )
+    
+    try:
+        sts = session.client("sts")
+        ident = sts.get_caller_identity()
+        print('identidade ok:')
+        print(f" Account: {ident.get('Account')}")
+        print(f" Arn: {ident.get('Arn')}")
+    except (NoCredentialsError, ClientError) as e:
+        raise SystemExit(f"Falha ao autenticar via STS. Erro:{e}")
+    
+    try:
+        s3 = session.client("s3")
+        resp = s3.list_buckets()
+        buckets = [b["Name"] for b in resp.get("Buckets", [])]
+        print("\nS3 buckets:")
+        if not buckets:
+            print(" (nenhum bucket encontrado)")
+        else:
+            for name in buckets:
+                print(f" - {name}")
+    except ClientError as e:
+        raise SystemExit(f"falha ao listar buckets S3. Erro: {e}")
+    
+   if __name__ == "__main__":
+        scan_teste()
