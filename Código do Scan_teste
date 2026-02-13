@@ -32,4 +32,4 @@ def scan_teste(profile: str = "<NOME DO PROFILE>", region: str = "<REGIÃO DA CO
         raise SystemExit(f"falha ao listar buckets S3. Erro: {e}")
     
    if __name__ == "__main__":
-        scan_teste()
+        scan_teste() 
