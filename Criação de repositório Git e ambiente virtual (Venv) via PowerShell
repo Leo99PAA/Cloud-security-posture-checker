@@ -1,15 +1,16 @@
-mkdir cloud-posture-checker                                                                   (cria uma pasta para servir de repositório dentro do terminal de escolha) 
-cd cloud-posture-checker                                                                      (especifica para o power shell mudar a pasta atual pela a que foi criada anteriormente)
-git init                                                                                      (transforma a pasta em um repositório Git)
-py -m venv .venv                                                                              (Cria um ambiente virtual usando o python)
+mkdir cloud-posture-checker
+cd cloud-posture-checker 
+git init 
+py -m venv .venv
 #em caso de erro por "não pode ser carregado porque a execução de scripts foi desabilitada neste sistema." usar o comando: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-.\.venv\Scripts\Activate.ps1                                                                  (ativa o ambiente virtual para os comandos apontarem para o python dentro da .venv)
-py -m pip install --upgrade pip                                                               (instala o pip da versão python que foi utilizada na venv)
-pip install boto3 typer rich pydantic                                                         (Instala as bibliotecas necessárias através do gerenciador de pacotes pip)
-pip freeze > bibliotecas.txt                                                                  (salva um arquivo txt para se for necessário instalar as bibliotecas no futuro usar somente o comando: pip install -r bibliotecasCSPM.txt)
-mkdir src                                                                                     (cria o arquivo aonde vai ficar o código fonte)
-mkdir src\cspm_checker                                                                        (cria o arquivo aonde vai ficar os pacotes python)
-new-item src\cspm_checker\__init__.py -itemtype file                                          (Cria um arquivo python vazio, que é útil para imports)
-new-item src\cspm_checker\cli.py -itemtype file                                               (cria o arquivo aonde vai ficar a interface de linha de comando)
-new-item src\cspm_checker\scan_teste.py -itemtype file                                        (cria o arquivo onde vai ficar o primeiro teste de escaneamento)
-new-item .gitignore -itemtype file                                                            (cria o arquivo aonde vamos especificar ao git quais pastas não devem ser versionadas)
+.\.venv\Scripts\Activate.ps1
+py -m pip install --upgrade pip
+pip install boto3 typer rich pydantic 
+pip freeze > bibliotecas.txt
+pip install -r bibliotecasCSPM.txt
+mkdir src                                                                                   
+mkdir src\cspm_checker                                                                    
+new-item src\cspm_checker\__init__.py -itemtype file                                      
+new-item src\cspm_checker\cli.py -itemtype file                                      
+new-item src\cspm_checker\scan_teste.py -itemtype file                                    
+new-item .gitignore -itemtype file                                                  
