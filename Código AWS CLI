@@ -1,0 +1,13 @@
+import typer
+from cspm_checker.scan_teste import scan_teste
+
+app = typer.Typer(help="Cloud Posture Checker (MVP)")
+
+@app.command()
+def scan(
+    profile: str = typer.Option("cspm-readonly", help="AWS profile do AWS CLI"),
+    region: str = typer.Option("us-east-2", help="Região padrão us-east-2"),
+):
+    scan_teste(profile=profile, region=region)
+if __name__ == "__main__":
+    app()
