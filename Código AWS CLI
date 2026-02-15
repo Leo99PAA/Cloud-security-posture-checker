@@ -1,12 +1,12 @@
 import typer
-from cspm_checker.scan_teste import scan_teste
+from <NOME DO PACOTE>.<NOME DO ARQUIVO PYTHON COM O CÓDIGO> import <NOME DA FUNÇÂO>
 
 app = typer.Typer(help="Cloud Posture Checker (MVP)")
 
 @app.command()
 def scan(
-    profile: str = typer.Option("cspm-readonly", help="AWS profile do AWS CLI"),
-    region: str = typer.Option("us-east-2", help="Região padrão us-east-2"),
+    profile: str = typer.Option("<AWS PROFILE>", help="AWS profile do AWS CLI"),
+    region: str = typer.Option("<AWS REGIÃO>", help="Região padrão <>AWS REGIÃO"),
 ):
     scan_teste(profile=profile, region=region)
 if __name__ == "__main__":
