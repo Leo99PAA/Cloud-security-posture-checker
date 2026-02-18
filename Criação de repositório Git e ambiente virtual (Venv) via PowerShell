@@ -13,4 +13,4 @@ mkdir src\cspm_checker
 new-item src\cspm_checker\__init__.py -itemtype file                                      
 new-item src\cspm_checker\cli.py -itemtype file                                      
 new-item src\cspm_checker\scan_teste.py -itemtype file                                    
-new-item .gitignore -itemtype file                                                  
+new-item .gitignore -itemtype file
