@@ -4,7 +4,7 @@ git init
 py -m venv .venv
 #em caso de erro por "não pode ser carregado porque a execução de scripts foi desabilitada neste sistema." usar o comando: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 .\.venv\Scripts\Activate.ps1
-py -m pip install --upgrade pip
+py -m pip install --upgrade pip 
 pip install boto3 typer rich pydantic 
 pip freeze > bibliotecas.txt
 pip install -r bibliotecasCSPM.txt
