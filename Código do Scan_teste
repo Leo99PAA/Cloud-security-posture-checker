@@ -8,7 +8,7 @@ def scan_teste(profile: str = "<NOME DO PROFILE>", region: str = "<REGIÃO DA CO
         raise SystemExit(
             f"profile '{profile}' não encontrado. rode: aws configure --profile {profile}"
         )
-   
+
     try:
         sts = session.client("sts")
         ident = sts.get_caller_identity()
