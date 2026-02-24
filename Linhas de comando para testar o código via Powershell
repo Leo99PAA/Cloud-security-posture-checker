@@ -1,0 +1,4 @@
+No PowerShell, com .venv ativa:
+$env:PYTHONPATH="src"
+python src\cspm_checker\cli.py --help
+python src\cspm_checker\cli.py scan --profile <PROFILE NAME> --region <PROFILE REGION>
